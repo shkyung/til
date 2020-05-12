@@ -1,5 +1,5 @@
-# reference
-<https://devdocs.io/javascript/global_objects/array>  
+# Array
+reference: <https://devdocs.io/javascript/global_objects/array>  
 
 **push & pop**  
 - 배열의 뒤에서 추가,삭제
