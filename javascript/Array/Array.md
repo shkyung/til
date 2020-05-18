@@ -41,3 +41,58 @@ Array.isArray(m.values())
 Array.isArray(Array.from(m.values()))
 //true
 ```
+
+**Array.reduce()**  
+-
+```arr.reduce(callback[,initialValue])```  
+- reduce() 메서드는 배열의 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, 하나의 결과값을 반환합니다.  
+- initialValue를 제공하지 않으면, reduce()는 인덱스 1부터 시작해 콜백 함수를 실행하고 첫 번째 인덱스는 건너 뜁니다. initialValue를 제공하면 인덱스 0에서 시작합니다.
+    - initialvalue가 없다 -> initialValue = 0 인 것처럼 작동  
+    
+**활용**  
+1. 값 합산
+```js
+var total = [ 0, 1, 2, 3 ].reduce(
+  ( accumulator, currentValue ) => accumulator + currentValue, 0);
+```
+2. 중첩 배열 펼치기
+```js
+var flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+  function(accumulator, currentValue) {
+    return accumulator.concat(currentValue);
+  },
+  []
+);
+```
+3. 객체 내의 값 인스턴스 개수 세기
+```js
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+var countedNames = names.reduce(function (allNames, name) { 
+  if (name in allNames) {
+    allNames[name]++;
+  }
+  else {
+    allNames[name] = 1;
+  }
+  return allNames;
+}, {});
+// countedNames is:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+```
+4. 배열의 중복 항목 제거  
+5. 프로미스의 순차적 실행
+- Promise.all()은 순서를 보장하지 않음.
+```js
+function runPromiseInSequence(arr, input) {
+  return arr.reduce(
+    (promiseChain, currentFunction) => promiseChain.then(currentFunction),
+    Promise.resolve(input)
+  );
+}
+
+const promiseArr = [p1, p2, p3, p4];
+runPromiseInSequence(promiseArr, 10)
+  .then(console.log);   // 1200
+```
+6. 그외..
