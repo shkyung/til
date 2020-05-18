@@ -25,3 +25,19 @@ var removedItem = fruits.splice(1, 1); // this is how to remove an item
 - 유사배열 객체를 array로 만들어 반환하여 array처럼 사용. 단 얉은 복사.
 - getElementByClassName 등의 요소를 가지고 올때 등등에 유용하게 쓰일 듯?
 - 기존의 apply, call 방법보다 더 간편하다고 함.
+
+```js
+const m = new Map([[1, 2], [2, 4], [4, 8]]);
+m.values()
+//MapIterator {2, 4, 8}
+m.keys()
+//MapIterator {1, 2, 4}
+Array.from(m.keys())
+//(3) [1, 2, 4]
+Array.from(m.values())
+//(3) [2, 4, 8]
+Array.isArray(m.values())
+//false
+Array.isArray(Array.from(m.values()))
+//true
+```
