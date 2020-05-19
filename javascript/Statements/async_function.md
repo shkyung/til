@@ -1,14 +1,14 @@
 # async function
 reference: <https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function>
 
-###Description
+### Description
 - async function은 AsyncFunction 객체를 반환하는 하나의 비동기 함수를 정의한다.
 - 비동기 함수는 스크립트 코드가 구동되는 환경의 **이벤트루프**를 통해 비동기적으로 작동하는 함수이다.  
 _추후 자바스크립트 엔진과 이벤트루프도 정리를 해야겠다._ https://meetup.toast.com/posts/89
 - **await** 를 사용할 수 있다. 함수앞에 await를 쓰면 해당 함수의 반환값이 전달될때까지 기다린 후 이후 statements를 실행한다.
-###Return value 
+### Return value 
 - Promise : async 함수에 의해 반환 된 값으로 해결되거나 async함수 내에서 발생하는 캐치되지 않는 예외로 거부되는 값.
-###Examples
+### Examples
 ```js
     const resolveAfter2Seconds = function() {
         console.log("starting slow promise");
