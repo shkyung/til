@@ -1,0 +1,22 @@
+{
+  "name": "til",
+  "version": "1.0.0",
+  "description": "Today I learned",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shkyung/til.git"
+  },
+  "author": "shkyung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shkyung/til/issues"
+  },
+  "homepage": "https://github.com/shkyung/til#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}
