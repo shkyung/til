@@ -59,4 +59,27 @@ describe('Array test', () => {
     expect([...arr.keys()]).toEqual([0, 1, 2])
     expect(arr.keys().next().value).toBe(arr.entries().next().value[0])
   })
+
+  test('Array.reduce() #1', () => {
+    const reducer = (accum, cur) => accum + cur;
+    expect([1, 2, 3, 4].reduce(reducer)).toEqual([1, 2, 3, 4].reduce(reducer, 0))
+    expect([1, 2, 3, 4].reduce(reducer, 5)).toEqual(15)
+  })
+
+  test('Array.reduce() #2', () => {
+    const arr = [[1,2],[3,4],[5,6]]
+    const reducer = (accum, cur) => accum.concat(cur)
+
+    expect(arr.reduce(reducer)).toEqual([1,2,3,4,5,6])
+    expect(arr.reduce(reducer)).toEqual(arr.reduce(reducer,[]))
+    expect(arr.reduce(reducer,[])).toEqual(arr.flat())
+  })
+
+  test('Array.reduceRight()', () => {
+    const arr = ['1','2','3','4','5'];
+    const reducer = (accum, cur) => accum + cur;
+
+    expect(arr.reduce(reducer)).toEqual("12345")
+    expect(arr.reduceRight(reducer)).toEqual("54321")
+  })
 })
