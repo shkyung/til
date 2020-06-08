@@ -18,5 +18,8 @@
   "homepage": "https://github.com/shkyung/til#readme",
   "devDependencies": {
     "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "@types/jest": "^25.2.3"
   }
 }

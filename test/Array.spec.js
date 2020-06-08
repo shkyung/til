@@ -67,19 +67,32 @@ describe('Array test', () => {
   })
 
   test('Array.reduce() #2', () => {
-    const arr = [[1,2],[3,4],[5,6]]
+    const arr = [[1, 2], [3, 4], [5, 6]]
     const reducer = (accum, cur) => accum.concat(cur)
 
-    expect(arr.reduce(reducer)).toEqual([1,2,3,4,5,6])
-    expect(arr.reduce(reducer)).toEqual(arr.reduce(reducer,[]))
-    expect(arr.reduce(reducer,[])).toEqual(arr.flat())
+    expect(arr.reduce(reducer)).toEqual([1, 2, 3, 4, 5, 6])
+    expect(arr.reduce(reducer)).toEqual(arr.reduce(reducer, []))
+    expect(arr.reduce(reducer, [])).toEqual(arr.flat())
   })
 
   test('Array.reduceRight()', () => {
-    const arr = ['1','2','3','4','5'];
+    const arr = ['1', '2', '3', '4', '5'];
     const reducer = (accum, cur) => accum + cur;
 
     expect(arr.reduce(reducer)).toEqual("12345")
     expect(arr.reduceRight(reducer)).toEqual("54321")
+  })
+
+  test('Array.some()', () => {
+    expect([2, 5, 8, 1, 4].some(elem => elem > 10)).toBeFalsy();
+    expect([2, 5, 8, 1, 4].some(elem => elem > 10)).toEqual(!![2, 5, 8, 1, 4].find(elem => elem > 10))
+  })
+
+  test('Array.values()', () => {
+    const fruits = ["Banana", "Orange"];
+    const f = fruits.values();
+    expect(f.next().value).toEqual("Banana")
+    expect(f.next().value).toEqual("Orange")
+    expect(f.next().done).toBeTruthy()
   })
 })
