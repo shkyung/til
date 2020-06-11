@@ -4,7 +4,7 @@
   "description": "Today I learned",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose ./test/*.spec.js"
   },
   "repository": {
     "type": "git",
