@@ -28,4 +28,19 @@ describe('Object test', () => {
     expect(obj2.a).toBe(0)
     expect(obj2.b.c).toBe(0)
   })
+
+  test('Object.entries()', () => {
+    const obj = {foo: 'bar', baz: 42}
+    const ret = Object.entries(obj)
+    expect(ret).toEqual([['foo', 'bar'], ['baz', 42]])
+  })
+
+  test('Object.freeze() & Object.isFrozen()', () => {
+    const obj1 = {prop1: 42}
+    Object.freeze(obj1)
+
+    obj1.prop2 = 30;
+    expect(obj1.prop2).toEqual(undefined)
+    expect(Object.isFrozen(obj1)).toBeTruthy()
+  })
 })
