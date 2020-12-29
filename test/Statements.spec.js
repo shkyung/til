@@ -1,20 +1,20 @@
 describe('Statements test', () => {
   test('continue ', () => {
-    let text = '';
+    let text = ''
 
     for (let i = 0; i < 10; i++) {
       if (i === 3) {
-        continue;
+        continue
       }
-      text += i;
+      text += i
     }
     expect(text).toBe('012456789')
   })
 
   test('function* #1', () => {
     function* generator(i) {
-      yield i;
-      yield i + 10;
+      yield i
+      yield i + 10
     }
 
     const gen = generator(10)
