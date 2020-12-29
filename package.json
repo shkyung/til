@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/shkyung/til#readme",
   "devDependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
     "@types/jest": "^25.2.3"
