@@ -12,11 +12,9 @@
  */
 
 const coinChange = function (coins, amount) {
-  const d = Array(amount + 1)
-    .fill()
-    .map(() => amount + 1)
-
   const INVALID_NUMBER = amount + 1
+  const d = Array(INVALID_NUMBER)
+    .fill(INVALID_NUMBER, 1)
   d[0] = 0
 
   coins.forEach((coin) => {
