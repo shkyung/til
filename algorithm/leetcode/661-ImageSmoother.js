@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/image-smoother/
- * Runtime: 144 ms, faster than 74.58% of JavaScript online submissions for Image Smoother.
- * Memory Usage: 46 MB, less than 69.49% of JavaScript online submissions for Image Smoother.
+ * Runtime: 136 ms, faster than 93.22% of JavaScript online submissions for Image Smoother.
+ * Memory Usage: 46.1 MB, less than 69.49% of JavaScript online submissions for Image Smoother.
  */
 /**
  * @param {number[][]} M
@@ -20,7 +20,7 @@ var imageSmoother = function (M) {
     [-1, -1]
   ]
 
-  const ret = M.map((row, i) => {
+  return M.map((row, i) => {
     return row.map((value, j) => {
       let sum = value
       let count = 1
@@ -41,5 +41,4 @@ var imageSmoother = function (M) {
       return Math.floor(sum / count)
     })
   })
-  return ret
 }
