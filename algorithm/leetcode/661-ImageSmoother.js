@@ -19,23 +19,20 @@ var imageSmoother = function (M) {
     [0, -1],
     [-1, -1]
   ]
+  const maxIndexOfM = M.length - 1
 
   return M.map((row, i) => {
+    const maxIndexOfRow = row.length - 1
     return row.map((value, j) => {
       let sum = value
       let count = 1
       dirArr.forEach((dir) => {
         const [dx, dy] = dir
-        if (
-          i + dx < 0 ||
-          i + dx > M.length - 1 ||
-          j + dy < 0 ||
-          j + dy > row.length - 1
-        ) {
-          // ignore out of range
-        } else {
-          sum += M[i + dx][j + dy]
-          count++
+        const x = i + dx
+        const y = j + dy
+        if (x >= 0 && x <= maxIndexOfM && y >= 0 && y <= maxIndexOfRow) {
+          sum += M[x][y]
+          count += 1
         }
       })
       return Math.floor(sum / count)
