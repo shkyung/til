@@ -1,4 +1,5 @@
 /***
+ * https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers
  * Runtime: 96 ms, faster than 83.74% of JavaScript online submissions for Partitioning Into Minimum Number Of Deci-Binary Numbers.
  * Memory Usage: 45.9 MB, less than 50.49% of JavaScript online submissions for Partitioning Into Minimum Number Of Deci-Binary Numbers.
  */
@@ -8,7 +9,7 @@
  */
 var minPartitions = function (n) {
   const arr = n.split('')
-  let length = arr.length
+  const length = arr.length
   let max = 0
 
   for (let i = 0; i < length; i++) {
