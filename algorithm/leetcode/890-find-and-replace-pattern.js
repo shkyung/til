@@ -9,8 +9,6 @@
  * @return {string[]}
  */
 var findAndReplacePattern = function (words, pattern) {
-  const patternLen = pattern.length
-
   const ret = words.reduce((accum, word) => {
     let map = {}
 
