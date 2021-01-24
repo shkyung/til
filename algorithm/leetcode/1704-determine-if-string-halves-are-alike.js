@@ -7,19 +7,20 @@
  * @param {string} s
  * @return {boolean}
  */
-var halvesAreAlike = function (s) {
-  function _getVowelNumberInArr(arr) {
-    const vowels = ['a', 'e', 'i', 'o', 'u']
-    return arr.reduce((accum, value) => {
-      if (vowels.indexOf(value.toLowerCase()) >= 0) {
-        accum += 1
-      }
-      return accum
-    }, 0)
-  }
+function getVowelNumberInArr(arr) {
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  return arr.reduce((accum, value) => {
+    if (vowels.indexOf(value.toLowerCase()) >= 0) {
+      accum += 1
+    }
+    return accum
+  }, 0)
+}
 
+var halvesAreAlike = function (s) {
   const len = s.length
   const a = s.slice(0, len / 2)
   const b = s.slice(len / 2)
-  return _getVowelNumberInArr([...a]) === _getVowelNumberInArr([...b])
+
+  return getVowelNumberInArr([...a]) === getVowelNumberInArr([...b])
 }
