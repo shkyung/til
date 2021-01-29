@@ -44,7 +44,7 @@ BrowserHistory.prototype.forward = function (steps) {
   const len = this.stack.length
 
   if (this.index + steps < len) {
-    this.index += step
+    this.index += steps
   } else {
     this.index = len - 1
   }
