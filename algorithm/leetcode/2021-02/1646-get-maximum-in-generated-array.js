@@ -1,17 +1,15 @@
 /**
  * https://leetcode.com/problems/get-maximum-in-generated-array
  * Runtime: 72 ms, faster than 94.42% of JavaScript online submissions for Get Maximum in Generated Array.
- * Memory Usage: 38.8 MB, less than 18.00% of JavaScript online submissions for Get Maximum in Generated Array.
+ * Memory Usage: 38.6 MB, less than 70.73% of JavaScript online submissions for Get Maximum in Generated Array.
  */
 /**
  * @param {number} n
  * @return {number}
  */
 var getMaximumGenerated = function (n) {
-  if (n === 0) {
-    return 0
-  } else if (n === 1) {
-    return 1
+  if (n <= 1) {
+    return n
   }
   const arr = [0, 1]
   let max = 1
@@ -27,7 +25,7 @@ var getMaximumGenerated = function (n) {
     if (numI > max) {
       max = numI
     }
-    arr.push(numI)
+    arr[i] = numI
   }
   return max
 }
